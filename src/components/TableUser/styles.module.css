@@ -20,23 +20,24 @@
 }
 
 
-/* .row:onclick{
+.selected{
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8)!important;
+  border-bottom: 2px solid #DE3169;
+  opacity: 0.2;
+}
 
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-bottom: 2px solid #DE3169;
-
-
-} */
+.utilsSelected {
+  opacity: 10!important;
+  cursor: pointer;
+  border: none;
+}
 
 .containerPagination{
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 25px;
-
-
 }
 
 .btnPage{
@@ -57,6 +58,8 @@
   border: none;
   border-radius: 4px;
   color: #fff;
+}
 
-
+.row {
+  cursor: pointer;
 }

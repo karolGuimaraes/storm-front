@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import styles from './styles.module.css';
 import users from '../../mocks/users.json';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -15,6 +15,26 @@ import {
 
 
 export default class TableUser extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selected : [] }
+  }
+
+  isSelected(username) { 
+    return this.state.selected.indexOf(username) !== -1
+  }
+
+  handleClick (event, username) {
+    const selectedIndex = this.state.selected.indexOf(username);
+    if (selectedIndex === -1) {
+      this.setState({selected: username});
+    } else if (selectedIndex === 0) {
+      this.setState({selected: []});
+    } else if (selectedIndex === this.state.selected.length - 1) {
+      this.setState({selected: []});
+    }
+  }
+  
   render() {
     return (
       <>
@@ -36,16 +56,23 @@ export default class TableUser extends React.Component {
             </TableHead>
 
             <TableBody>
-              {users.map((user, index) => (
+              {users.map((user, index) => { return(
                 <TableRow
+                  hover
+                  onClick={(event) => this.handleClick(event, user.username)}
+                  role="checkbox"
+                  aria-checked={this.isSelected(user.username)}
+                  tabIndex={-1}
+                  key={user.username}
+                  selected={this.isSelected(user.username)}
                   style={{
                     backgroundColor: index % 2 === 0 ? '#F5F5F5' : '#E9E9E9',
                   }}
-                  className={styles.row}
+                  className={this.isSelected(user.username) ? styles.selected : styles.row }
                 >
                 <div className="overlay"></div>
                 <TableCell>
-                  <Checkbox checked={false} />
+                  <Checkbox checked={this.isSelected(user.username)} />
                 </TableCell>
                 <TableCell align="left">{user.username}</TableCell>
                 <TableCell align="left">{user.email}</TableCell>
@@ -62,7 +89,7 @@ export default class TableUser extends React.Component {
                   </TableCell>
                 }
 
-                <TableCell align="center" className={styles.utils}>
+                <TableCell align="center" className={this.isSelected(user.username) ? styles.utilsSelected : styles.utils }>
                   <button>
                     <DeleteIcon />
                   </button>
@@ -72,12 +99,12 @@ export default class TableUser extends React.Component {
                 </TableCell>
 
                 <TableCell align="center">
-                  <button style={{border:'none'}}>
+                  <button style={{border:'none',cursor: 'pointer'}}>
                     <MoreHorizIcon />
                   </button>
                 </TableCell>
               </TableRow>
-              ))}
+              )})}
             </TableBody>
           </Table>
         </div>

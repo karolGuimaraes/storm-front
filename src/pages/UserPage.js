@@ -7,9 +7,9 @@ export default class UserPage extends React.Component {
   render() {
     return (
       <>
-      <Header />
-      <TableUsers />
-      <Footer />
+        <Header />
+        <TableUsers />
+        <Footer />
       </>
     )
   }
