@@ -9,6 +9,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 
+
 export default class Header extends React.Component {
   render() {
     return (
@@ -27,7 +28,7 @@ export default class Header extends React.Component {
 
           <div className={styles.containerSearch}>
             <input className={styles.input} placeholder="Pesquisar..."/>
-            <SearchIcon />
+            <SearchIcon className={styles.icon}/>
           </div>
         </div>
 
@@ -36,8 +37,8 @@ export default class Header extends React.Component {
             <TuneIcon />
           </button>
           <button className={styles.btnPerson}>
-            <PersonIcon  />
-            <span className={styles.addUserText}>INCLUIR USUÁRIO</span>
+            <PersonIcon className={styles.btnIcon}/>
+            <span className={styles.addUserText} >INCLUIR USUÁRIO</span>
           </button>
           <span className={styles.pipe}></span>
           <button className={styles.icon}>
