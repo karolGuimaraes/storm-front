@@ -46,6 +46,7 @@ export default function TableUser () {
           <TableBody>
             {users.map((user, index) => { return(
               <TableRow
+                key={user.username}
                 onClick={(event) => onClickHandler(user.username)}
                 style={{
                   backgroundColor: index % 2 === 0 ? '#F5F5F5' : '#E9E9E9',
