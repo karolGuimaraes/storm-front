@@ -5,12 +5,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import {
-  TableHead,
-  Checkbox,
-  TableCell,
-  TableBody,
-  Table,
-  TableRow,
+  TableHead, Checkbox, TableCell,
+  TableBody, Table, TableRow,
 } from '@material-ui/core';
 
 export default function TableUser () {
@@ -36,7 +32,6 @@ export default function TableUser () {
           <TableHead>
             <TableRow>
               <TableCell align="center"></TableCell>
-              <TableCell align="center"></TableCell>
               <TableCell align="left">USUÁRIO</TableCell>
               <TableCell align="left">EMAIL</TableCell>
               <TableCell align="center">DATA DE INCLUSÃO</TableCell>
@@ -51,19 +46,12 @@ export default function TableUser () {
           <TableBody>
             {users.map((user, index) => { return(
               <TableRow
-                hover
                 onClick={(event) => onClickHandler(user.username)}
-                role="checkbox"
-                aria-checked={isSelected(user.username)}
-                tabIndex={-1}
-                key={user.username}
-                selected={isSelected(user.username)}
                 style={{
                   backgroundColor: index % 2 === 0 ? '#F5F5F5' : '#E9E9E9',
                 }}
                 className={isSelected(user.username) ? styles.selected : styles.row }
               >
-              <div className="overlay"></div>
               <TableCell>
                 <Checkbox checked={isSelected(user.username)} />
               </TableCell>
@@ -92,7 +80,7 @@ export default function TableUser () {
               </TableCell>
 
               <TableCell align="center">
-                <button style={{border:'none',cursor: 'pointer'}}>
+                <button style={{border:'none', cursor: 'pointer', backgroundColor: index % 2 === 0 ? '#F5F5F5' : '#E9E9E9'}}>
                   <MoreHorizIcon />
                 </button>
               </TableCell>
@@ -104,9 +92,7 @@ export default function TableUser () {
       <div className={styles.containerPagination}>
         <button className={styles.btnPage}>Primeiro</button>
         <button className={styles.btnPage}>Anterior</button>
-        <button variant="contained" color="secondary" className={styles.current}>
-          1
-        </button>
+        <button className={styles.currentPage}>1</button>
         <button className={styles.btnPage}>Próximo</button>
         <button className={styles.btnPage}>Último</button>
       </div>

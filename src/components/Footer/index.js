@@ -8,9 +8,9 @@ export default function Footer () {
   return (
     <div>
       <footer className={styles.footer}>
-        <div className={styles.headerLeft}>
-          <div className={styles.divAir}>
-            <RadioButtonCheckedIcon className={styles.iconAir}/>
+        <div>
+          <div className={styles.divOnAir}>
+            <RadioButtonCheckedIcon className={styles.iconOnAir}/>
             <span>No Ar</span>
           </div>
           <div className={styles.info}>
@@ -23,10 +23,10 @@ export default function Footer () {
           </div>
         </div>
 
-        <div className={styles.headerRight}>
+        <div className={styles.footerRight}>
           <span>Quinta, 30 de Maio de 2019</span>
           <span className={styles.hour}>// 10:32:42</span>
-          </div>
+        </div>
       </footer>
     </div>
   )

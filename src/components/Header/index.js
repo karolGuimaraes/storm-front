@@ -24,28 +24,29 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const [openSiderBar, setopenSiderBar] = useState(false);
+  const [openSiderBar, setOpenSiderBar] = useState(false);
 
   const siderBar = (open) => {
-    setopenSiderBar(open);
+    setOpenSiderBar(open);
   }
 
   return (
     <header className={styles.header}>
       <Drawer open={openSiderBar} anchor="right" classes={{ paper: classes.paper }}>
-        <div className={styles.headerFilter}>
-          <div className="headerLeft">
+        <div className={styles.headerSiderBar}>
+          <div className={styles.sideBarLeft}>
             <TuneIcon style={{ color: '#c1c1c1' }} />
             <span>FILTROS</span>
           </div>
-          <button onClick={() => siderBar(false)} className={styles.btnClose}><CloseIcon /></button>
+          <button onClick={() => siderBar(false)} className={styles.btnClose}>
+            <CloseIcon />
+          </button>
         </div>
         <div>
           <div className={styles.content}>
             <p>
               Utilize os filtros abaixo para refinar os resultados da tabela,
               clique no botão APLICAR para salvar as alterações.
-              <span className="trace"></span>
             </p>
           </div>
           <div className={styles.filter}>
@@ -64,7 +65,7 @@ export default function Header(props) {
             <ArrowDropDownIcon className={styles.iconSideBar} />
           </div>
 
-          <div className={styles.btnAplicar}>
+          <div className={styles.btnApply}>
             <button>
               APLICAR
             </button>
@@ -76,7 +77,7 @@ export default function Header(props) {
         <button className={styles.logo}>
           <img src={logo} alt='logo'/>
         </button>
-        <span className={styles.pipe}></span>
+        <span className={styles.separator}></span>
         <button className={styles.btnDefender}>
           <SecurityIcon />
         </button>
@@ -98,7 +99,7 @@ export default function Header(props) {
           <PersonIcon className={styles.btnIcon}/>
           <span className={styles.addUserText} >INCLUIR USUÁRIO</span>
         </button>
-        <span className={styles.pipe}></span>
+        <span className={styles.separator}></span>
         <button className={styles.icon}>
           <HomeIcon />
         </button>

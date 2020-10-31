@@ -7,37 +7,31 @@
   width: 100%;
   margin-top: 15px;
   font-size: 14px;
-  /* padding: 5px 0 5px 0; */
   position: fixed;
   bottom: 0;
-
 }
 
-.headerLeft {
+.footer div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.headerRight {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.footerRight {
   margin-right: 10px;
 }
 
-.divAir {
+.divOnAir {
   color: #FF8700;
-  font-family: 'Audiowide';
   font-weight: 400;
   margin-left: 10px;
   margin-right: 45px;
   padding: 10px;
 }
 
-.iconAir {
+.iconOnAir {
   display: inline-block;
-  vertical-align:middle;
+  vertical-align: middle;
   margin-right: 5px;
   width: 16px;
   height: 16px;

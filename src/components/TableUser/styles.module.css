@@ -14,21 +14,29 @@
 
 .utils{
   opacity: 0;
-  border: none;
 }
 
+.row {
+  cursor: pointer;
+}
 
 .selected{
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.8)!important;
   border-bottom: 2px solid #DE3169;
+}
+
+.selected td:not(:nth-child(8)) {
   opacity: 0.2;
 }
 
-.utilsSelected {
-  opacity: 10!important;
-  cursor: pointer;
+.utilsSelected button {
+  margin-right: 5px;
+  color: #666666;
   border: none;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #FFFFFF;
 }
 
 .containerPagination{
@@ -50,8 +58,7 @@
   cursor: pointer;
 }
 
-
-.current{
+.currentPage{
   padding: 15px;
   margin: 0 5px;
   background-color:#D83367;
@@ -61,6 +68,4 @@
   cursor: pointer;
 }
 
-.row {
-  cursor: pointer;
-}
+
