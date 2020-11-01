@@ -3,8 +3,8 @@ import { create } from "react-test-renderer";
 import { shallow } from 'enzyme';
 import Footer from '../components/Footer';
 
-describe("Test Footer Component", () => {
-  test("should ", () => {
+describe("Footer Component Test", () => {
+  test("renders correctly", () => {
     const footer = create(<footer />);
     expect(footer.toJSON()).toMatchSnapshot();
   });

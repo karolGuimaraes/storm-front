@@ -1,29 +1,11 @@
 import React from 'react';
-import { create } from "react-test-renderer";
-import { render, screen } from '@testing-library/react';
-import { shallow, mount } from 'enzyme';
 import Header from '../components/Header';
-import { HeadsetRounded } from '@material-ui/icons';
+import { create } from "react-test-renderer";
+import { shallow, render } from 'enzyme';
 
-describe("Test Header Component", () => {
+describe("Header Component Test", () => {
   it("renders correctly", () => {
-    shallow(<Header />);
+    const header = create(<Header />);
+    expect(header.toJSON()).toMatchSnapshot();
   });
-
-  it('renders without crashing', () => {
-    const header = shallow(<Header />);
-    expect(header.find('input')).toHaveLength(1)
-  });
-
-  it('renders without crashing', () => {
-    const wrapper = mount(<Header />);
-    const handleClick = jest.spyOn(React, "useState");
-    handleClick.mockImplementation(openSiderBar => [openSiderBar, setOpenSiderBar]);
-
-    wrapper.find(".styles_btnTune__1gLvs").simulate("click");
-    expect(changeSize).toBeTruthy();
-
-
-  });
-
 });

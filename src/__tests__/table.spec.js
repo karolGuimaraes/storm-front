@@ -3,8 +3,8 @@ import { create } from "react-test-renderer";
 import { shallow } from 'enzyme';
 import Table from '../components/TableUser';
 
-describe("Test Table Component", () => {
-  test("should ", () => {
+describe("Table Component Test", () => {
+  test("renders correctly", () => {
     const table = create(<Table />);
     expect(table.toJSON()).toMatchSnapshot();
   });
