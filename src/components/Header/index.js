@@ -32,7 +32,7 @@ export default function Header(props) {
 
   return (
     <header className={styles.header}>
-      <Drawer open={openSiderBar} anchor="right" classes={{ paper: classes.paper }}>
+      <Drawer title="siderBar" open={openSiderBar} anchor="right" classes={{ paper: classes.paper }}>
         <div className={styles.headerSiderBar}>
           <div className={styles.sideBarLeft}>
             <TuneIcon style={{ color: '#c1c1c1' }} />
