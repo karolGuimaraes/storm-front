@@ -81,7 +81,7 @@ export default function Header(props) {
         <button className={styles.btnDefender}>
           <SecurityIcon />
         </button>
-        <button className={styles.btnPerson2}>
+        <button className={styles.btnPerson}>
           <PersonIcon />
         </button>
 
@@ -95,7 +95,7 @@ export default function Header(props) {
         <button className={styles.btnTune} onClick={(event) => siderBar(true)}>
           <TuneIcon />
         </button>
-        <button className={styles.btnPerson}>
+        <button className={styles.btnInclude}>
           <PersonIcon className={styles.btnIcon}/>
           <span className={styles.addUserText} >INCLUIR USUÁRIO</span>
         </button>

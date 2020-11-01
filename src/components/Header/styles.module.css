@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
 
   height: 100px;
   width: 100%;
@@ -12,7 +13,6 @@
 
 .headerLeft {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.btnPerson2 {
+.btnPerson {
   padding: 15px;
   background-image: linear-gradient(#FF8700, #D83367);
   border-radius: 4px;
@@ -64,9 +64,7 @@
  
 .headerRight {
   display: flex;
-  justify-content: center;
   align-items: center;
-
   margin-right: 50px;
 }
 
@@ -79,14 +77,13 @@
   cursor: pointer;
 }
 
-.btnPerson {
+.btnInclude {
   padding: 15px;
   background-color: #D83367;
   border-radius: 4px;
   color: #fff;
   border: none;
   margin-left: 10px;
-  height: 48px;
   cursor: pointer;
 }
 
